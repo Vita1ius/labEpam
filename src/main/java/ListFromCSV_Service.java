@@ -1,5 +1,5 @@
 import java.util.List;
 
-public interface listFromCSV {
+public interface ListFromCSV_Service {
     List<SuperCar> getlist();
 }

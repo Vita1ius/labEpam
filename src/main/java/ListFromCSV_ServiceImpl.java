@@ -4,13 +4,12 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-public class CSV_imple implements listFromCSV{
+public class ListFromCSV_ServiceImpl implements ListFromCSV_Service {
     String line;
     @Override
     public List<SuperCar> getlist() {
         List<SuperCar> cars = new LinkedList<>();
-        try {
-            BufferedReader br = new BufferedReader(new FileReader("src/main/resources/file.csv"));
+        try(BufferedReader br = new BufferedReader(new FileReader("src/main/resources/file.csv"))){
             while ((line = br.readLine()) != null)
             {
                 String[] employee = line.split(",");

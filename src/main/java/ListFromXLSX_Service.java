@@ -1,5 +1,5 @@
 import java.util.List;
 
-public interface listFromXLSX {
+public interface ListFromXLSX_Service {
     List<SuperCar> getlist();
 }
