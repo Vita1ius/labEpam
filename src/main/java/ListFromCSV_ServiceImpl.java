@@ -1,3 +1,5 @@
+import org.apache.log4j.Logger;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -5,6 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ListFromCSV_ServiceImpl implements ListFromCSV_Service {
+    private static final Logger logger = Logger.getLogger(ListFromCSV_ServiceImpl.class);
     String line;
     @Override
     public List<SuperCar> getlist() {
@@ -18,6 +21,7 @@ public class ListFromCSV_ServiceImpl implements ListFromCSV_Service {
         }
         catch (IOException e) {
             e.printStackTrace();
+            logger.error("Помилка в ListFromCSV_ServiceImpl");
         }
         return cars;
     }
