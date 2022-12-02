@@ -1,3 +1,4 @@
+import org.apache.log4j.Logger;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -9,6 +10,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ListFromXLSX_ServiceImpl implements ListFromXLSX_Service {
+    private static final Logger logger = Logger.getLogger(ListFromXLSX_ServiceImpl.class);
     @Override
     public List<SuperCar> getlist() {
         File myFile = new File("src/main/resources/file.xlsx");
@@ -23,6 +25,7 @@ public class ListFromXLSX_ServiceImpl implements ListFromXLSX_Service {
             }
         } catch (IOException e) {
             e.printStackTrace();
+            logger.error("Помилка в ListFromXLSX_ServiceImpl");
         }
         return cars;
 
